@@ -14,7 +14,14 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 productRouter.route("/").get((req, res) => {
-  res.send("Product 1");
+  res.render("products",{
+    products: [
+        {productTitle: 'car1',productDescription: 'HONDA',productPrice : '30000'},
+        {productTitle: 'car2',productDescription: 'YAMAHA',productPrice : '35000'},
+        {productTitle: 'car3',productDescription: 'BMW',productPrice : '42000'}, 
+        {productTitle: 'car4',productDescription: 'SUSUKI',productPrice : '10000'}
+    ],
+    });
 });
 
 productRouter.route("/1").get((req, res) => {
