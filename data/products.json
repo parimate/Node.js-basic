@@ -1,5 +1,4 @@
-{
-    "products": [
+[
       {
         "id":1,
         "productTitle": "car",
@@ -24,5 +23,4 @@
         "productDescription": "SUSUKI",
         "productPrice": 10000
       }
-    ]
-  }
+]
