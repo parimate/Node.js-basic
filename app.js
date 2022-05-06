@@ -2,6 +2,7 @@ const express = require("express");
 const debug = require("debug")("app");
 const morgan = require("morgan");
 const path = require("path");
+const products = require("./data/products.json")
 const productRouter = express.Router();
 
 const app = express();
@@ -14,14 +15,9 @@ app.set("views", "./src/views");
 app.set("view engine", "ejs");
 
 productRouter.route("/").get((req, res) => {
-  res.render("products",{
-    products: [
-        {productTitle: 'car1',productDescription: 'HONDA',productPrice : '30000'},
-        {productTitle: 'car2',productDescription: 'YAMAHA',productPrice : '35000'},
-        {productTitle: 'car3',productDescription: 'BMW',productPrice : '42000'}, 
-        {productTitle: 'car4',productDescription: 'SUSUKI',productPrice : '10000'}
-    ],
-    });
+  res.render("products",
+    products,
+    );
 });
 
 productRouter.route("/1").get((req, res) => {
